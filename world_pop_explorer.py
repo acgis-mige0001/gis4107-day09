@@ -31,14 +31,15 @@ def get_country_count():
     """Return the number of countries in country_populations.  Create a list
 	   where each element of the list contains a line of data from
 	   country_populations and return the length of this list"""
-
-    pass
+    lines = country_pop.split('\n')
+    return len(lines) - 1
 
 def conv_num_with_commas(number_text):
     """Convert a number with commas (str) to a number.
        e.g. '1,000' would be converted to 1000"""
 
-    pass
+
+
 
 def get_top_five_countries():
     """Return a list of names of the top five countries in terms of population"""

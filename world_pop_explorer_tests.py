@@ -43,33 +43,45 @@ def test_get_continents_Asia_first_in_list():
 
 def test_get_country_count():
     """Get country count from population list"""
-    expected = ""
-    actual = ""
-    print_test_results(func, expected, actual)
+    expected = 233
+    actual = wpe.get_country_count()
+    print_test_results(wpe.get_country_count, expected, actual)
 
 def test_conv_num_with_commas():
     """Test for conversion of text 1,000 to number 1000"""
-    pass
+    expected = 1000
+    actual = wpe.conv_num_with_commas("1,000")
+    print_test_results(wpe.conv_num_with_commas, expected, actual)
 
 def test_get_top_five_countries():
     """Test for top five countries where China is 1st and Brazil 5th"""
-    pass
+    expected = ""
+    actual = ""
+    print_test_results(wpe.get_top_five_countries, expected, actual)
 
 def test_set_country_populations_dict():
     """Test for the country Réunion"""
-    pass
+    expected = ""
+    actual = ""
+    print_test_results(wpe.set_country_populations_dict, expected, actual)
 
 def test_get_population():
     """Test for the country Réunion"""
-    pass
+    expected = ""
+    actual = ""
+    print_test_results(wpe.get_population, expected, actual)
 
 def test_get_continents():
     """Test for number of continents"""
-    pass
+    expected = ""
+    actual = ""
+    print_test_results(wpe.get_continents, expected, actual)
 
 def test_get_continent_populations():
     """Test for population of Asia being larger than 4.5B"""
-    pass
+    expected = ""
+    actual = ""
+    print_test_results(wpe.get_continent_populations, expected, actual)
 
 
 # ------------------------------------------------------------------------------
