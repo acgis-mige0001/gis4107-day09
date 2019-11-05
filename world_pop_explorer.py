@@ -10,14 +10,16 @@
 # Created:     24/11/2017
 #-------------------------------------------------------------------------------
 
-from world_pop_by_country import data as country_pop
+import sys
+from world_pop_by_country import data as country_populations
+#
 
 # Key = country and value is number (i.e. not text containing commas)
 #
-country_pop_dict = {}
+country_populations_dict = dict()
 
 def main():
-    lines = country_pop.split('\n')
+    lines = country_populations.split('\n')
     print "country_populations has the following columns:"
     print lines[0]
     print repr(lines[0])
@@ -31,15 +33,17 @@ def get_country_count():
     """Return the number of countries in country_populations.  Create a list
 	   where each element of the list contains a line of data from
 	   country_populations and return the length of this list"""
-    lines = country_pop.split('\n')
-    return len(lines) - 1
+    #ci = country_populations
+    lines = country_populations.split('\n')
+    return len(lines)
+    #c.count()
 
 def conv_num_with_commas(number_text):
     """Convert a number with commas (str) to a number.
        e.g. '1,000' would be converted to 1000"""
-
-
-
+    number_text = '1,000'
+    n = int(number_text.replace(',',''))
+    return n
 
 def get_top_five_countries():
     """Return a list of names of the top five countries in terms of population"""
@@ -51,7 +55,7 @@ def set_country_populations_dict():
          and value is a tuple containing two elements:
             1. A numeric version of the comma separated number in the
                Pop 01Jul2017 column
-            2. The % change as a positive or negative number
+            2. The % decrease as a number
     """
 
     pass
@@ -67,8 +71,8 @@ def get_population(country_name):
 
 def get_continents():
     """Return the list of continents"""
-    return ['Asia']
 
+    pass
 
 def get_continent_populations():
     """Returns a dict where the key is the name of the continent and
