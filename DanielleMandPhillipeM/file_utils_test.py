@@ -1,9 +1,14 @@
 # -*- coding: UTF-8 -*-
 #-------------------------------------------------------------------------------
-# Name:        module2
+# Name:        module1
 # Purpose:
 #
-
+# Author:      elle.migeon
+#
+# Created:     12-11-2019
+# Copyright:   (c) elle.migeon 2019
+# Licence:     <your licence>
+#-------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------
 # Name:        exercise_template_tests.py
 #
@@ -16,60 +21,61 @@
 
 import sys
 import inspect
+import file_utils
+reload(file_utils)
 
-import dict_list_utils as dlu
-reload(dlu)
+# Add import statement for the module under test as follows:
+# import module_under_test as alias
 
-def template_for_test_functions():
-    """Doc string to describe test function"""
-    expected = ""
-    actual = ""
-    print_test_results(func, expected, actual)
-
-def test_get_missing_keys ():
-    """Doc string to describe test function"""
-    dict_ref = {1:1, 2:2, 3:3}
-    dict_to_compare = {2:2}
-    expected = [1, 3]
-    actual = [1, 3]
-    print_test_results(dlu.get_missing_keys, expected, actual)
-
-    dict_ref = {1:1, 2:2, 3:3}
-    dict_to_compare = {1:1, 2:2, 3:3}
-    expected = []
-    actual = []
-    print_test_results(dlu.get_missing_keys, expected, actual)
-
-def test_get_missing_keys_with_count():
-    dict_ref = {1:1, 2:2, 3:3}
-    dict_to_compare = {2:2}
-    expected = (2, [1, 3])
-    actual = (2, [1, 3])
-    print_test_results(dlu.get_missing_keys_with_count, expected, actual)
-
-def test_get_unique ():
-    expected = [1, 2, 3, 4, 5]
-    actual = [1, 2, 3, 4, 5]
-    print_test_results(dlu.get_unique, expected, actual)
-
-def test_flatten_list ():
-    expected = [1, 2, 3, 4, 5]
-    actual =  [1, 2, 3, 4, 5]
-    print_test_results(dlu.flatten_list, expected, actual)
-
-
-# ------------------------------------------------------------------------------
-# main() and testing helper functions  - safely ignore the rest of this script
-# ------------------------------------------------------------------------------
-
+# For example:
+# import world_pop_explorer as wpe
+# reload(wpe)
 
 def main():
-    """ Find and call all functions that begin with 'test'"""
+    # Find and call all functions that begin with "test"
     test_funcs = get_test_functions()
     for test_func in test_funcs:
         test_func()
 
+# Copy/paste/change the test template below to create new test functions, where:
+#    - the test function name must begin with the word "test"
+#    - Docstring contains description of the test being made
+#    - expected = Expected result from calling the function
+#    - actual = Actual result from calling the function
+#    - func = Function being tested (the actual function, not the name)"""
+#
+def template_for_test_functions():
+    """Docstring"""
+    expected = ""
+    actual = ""
+    print_test_results(func, desc, expected, actual)
 
+# ------------------------------------------------------------------------------
+
+# Create test functions here using the template_for_test_functions above.
+# The name of the test functions needs to begin with "test"
+
+def test_function():
+    """Docstring"""
+    expected = "x"
+    actual = ""
+    print_test_results(test_function, expected, actual)
+
+def test_get_file_content():
+    """Valid file"""
+    expected = ""
+    actual = ""
+    print_test_results(file_utils.get_file_content, expected, actual)
+
+##    """Non-existent file"""
+##    expected = "dne.txt"
+##    actual = "dne.txt"
+##    print_test_results(file_utils.get_file_content, expected, actual)
+
+# ------------------------------------------------------------------------------
+# Test template helper functions.  Code in this section should not need to
+# modified.
+#
 def get_test_functions():
     """Returns a list of functions that begin with the word test in the order
        they appear in this file."""
@@ -99,6 +105,7 @@ def get_test_functions():
 
 def print_test_results(func_tested, expected, actual):
     """func_tested is the function being tested
+       desc = Test description
        expected = Expected result of test
        actual = Actual result of test """
 
@@ -109,14 +116,14 @@ def print_test_results(func_tested, expected, actual):
     desc = func_tested.__doc__
 
     if expected == actual:
-        print "PASSED : {}".format(func_name)
-        print "__doc__: {}".format(desc)
+        print "PASSED: {}".format(func_name)
     else:
-        print "FAILED : {}".format(func_name)
-        print "__doc__: {}".format(desc)
-        print "Expect : {}".format(expected)
-        print "Actual : {}".format(actual)
+        print "FAILED: {}".format(func_name)
+        print "Expect: {}".format(expected)
+        print "Actual: {}".format(actual)
+        print "Desc:   {}".format(desc)
     print ""
 
 if __name__ == '__main__':
     main()
+
