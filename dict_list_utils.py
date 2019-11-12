@@ -22,17 +22,24 @@ def get_missing_keys (dict_ref, dict_to_compare):
     missing keys or an empty list if no keys are missing. Make sure you add a
     test for the case where there are no keys missing. """
 
-    dict_to_compare.has_key(2)
+    if dict_to_compare.has_key(2):
+        return
+    else:
+        return []
 
-##def get_missing_keys_with_count (dict_ref, dict_to_compare):
-##    """return a tuple containing the number of missing keys and the list of
-##    missing keys. This function can call get_missing_keys to get the list so
-##    you don't duplicate its code."""
-##
-##    return value1, value2
+def get_missing_keys_with_count (dict_ref, dict_to_compare):
+    """return a tuple containing the number of missing keys and the list of
+    missing keys. This function can call get_missing_keys to get the list so
+    you don't duplicate its code."""
+
+    get_missing_keys()
+    return value1, value2
 
 def get_unique (in_list):
     """May have duplicate values and returns a list of only unique values."""
+    return list(dict.fromkeys(in_list))
+    mylist = get_unique([1, 2, 2, 3, 4, 5])
+    print(mylist)
 
 def flatten_list (in_list):
     """in_list refers to a list that may contain other lists and/or tuples.
@@ -42,9 +49,8 @@ def flatten_list (in_list):
     For example, if in_list = [1, (2,3), [4,5]], the returned list would be
     [1, 2, 3, 4, 5]"""
 
-    in_list = [1, (2,3), [4,5]]
-    final_list = [item for items in in_list for item in in_list]
-    return final_list
+    flatten_list = [item for sublist in l for item in sublist]
+    return flatten_list
 
 if __name__ == '__main__':
     main()
