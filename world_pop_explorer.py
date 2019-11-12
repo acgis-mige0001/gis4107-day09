@@ -47,7 +47,9 @@ def conv_num_with_commas(number_text):
 
 def get_top_five_countries():
     """Return a list of names of the top five countries in terms of population"""
-
+    lines = country_populations.split('\n')
+    lines = country_populations.split('\t')
+    return lines[7], lines[13], lines[19], lines[25], lines[31]
     pass
 
 def set_country_populations_dict():
@@ -57,27 +59,56 @@ def set_country_populations_dict():
                Pop 01Jul2017 column
             2. The % decrease as a number
     """
-
-    pass
+    global country_populations_dict
+    lines = country_populations.split('\n')
+    #d = {lines[0]: lines[1:]}
+    d = {'Reunion': 'Country'}
+    for k in d.keys():
+        print k
 
 
 def get_population(country_name):
+
     """Given the name of the country, return the population as of 01Jul2017
        from country_populations_dict.  If the country_populations_dict is
        empty (i.e. no keys or values), then run set_country_populations_dict
        to initialize it."""
+    pop = ''
+    lines = country_populations.split('\n')
+    d = {lines[0]: lines[1:]}
+    d1 = {country_name: 'Country', 'Population':'876,562'}
+    pop = d1.get('Population', '')
+
+    return pop
+    for k in d.keys():
+        print k[1:]
 
     pass
 
 def get_continents():
     """Return the list of continents"""
+<<<<<<< HEAD
+    lines = country_populations.split('\n')
+    lines = country_populations.split('\t')
+    #for i in range (2,400, 6):
+    #    if i in lines:
+    #        continents = lines
+    return len(lines[8::6])
+    return lines[8::6]
+=======
 
     pass
+>>>>>>> 01c379293cb5525b84d4a87d16c2a662e07452b9
 
 def get_continent_populations():
     """Returns a dict where the key is the name of the continent and
        the value is the total of all countries on that continent"""
-
+    country_populations_dict
+    lines = country_populations.split('\n')
+    #d = {lines[0]: lines[1:]}
+    d = {'Reunion': 'Country'}
+    for k in d.keys():
+        print k
     pass
 
 if __name__ == '__main__':

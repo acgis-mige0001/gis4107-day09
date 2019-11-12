@@ -38,51 +38,85 @@ def template_for_test_functions():
 def test_get_continents_Asia_first_in_list():
     """Test Asia is first continent in list"""
     expected = "Asia"
-    actual = wpe.get_continents()[0]
+    actual = wpe.get_continents()
     print_test_results(wpe.get_continents, expected, actual)
 
 def test_get_country_count():
     """Get country count from population list"""
+<<<<<<< HEAD
+    expected = 234
+=======
     expected = 233
+>>>>>>> 01c379293cb5525b84d4a87d16c2a662e07452b9
     actual = wpe.get_country_count()
     print_test_results(wpe.get_country_count, expected, actual)
 
 def test_conv_num_with_commas():
     """Test for conversion of text 1,000 to number 1000"""
     expected = 1000
+<<<<<<< HEAD
+    actual = wpe.conv_num_with_commas(expected)
+=======
     actual = wpe.conv_num_with_commas("1,000")
+>>>>>>> 01c379293cb5525b84d4a87d16c2a662e07452b9
     print_test_results(wpe.conv_num_with_commas, expected, actual)
 
 def test_get_top_five_countries():
     """Test for top five countries where China is 1st and Brazil 5th"""
+<<<<<<< HEAD
+    expected = "('China', 'India', 'United States', 'Indonesia', 'Brazil')"
+    actual = wpe.get_top_five_countries()
+=======
     expected = ""
     actual = ""
+>>>>>>> 01c379293cb5525b84d4a87d16c2a662e07452b9
     print_test_results(wpe.get_top_five_countries, expected, actual)
 
 def test_set_country_populations_dict():
     """Test for the country Réunion"""
+<<<<<<< HEAD
+    expected = 'Reunion'
+    actual = wpe.set_country_populations_dict()
+=======
     expected = ""
     actual = ""
+>>>>>>> 01c379293cb5525b84d4a87d16c2a662e07452b9
     print_test_results(wpe.set_country_populations_dict, expected, actual)
 
 def test_get_population():
     """Test for the country Réunion"""
+<<<<<<< HEAD
+    expected = '876,562'
+    actual = wpe.get_population(expected)
+=======
     expected = ""
     actual = ""
+>>>>>>> 01c379293cb5525b84d4a87d16c2a662e07452b9
     print_test_results(wpe.get_population, expected, actual)
 
 def test_get_continents():
     """Test for number of continents"""
+<<<<<<< HEAD
+    expected = '9'
+    actual = wpe.get_continents()
+=======
     expected = ""
     actual = ""
+>>>>>>> 01c379293cb5525b84d4a87d16c2a662e07452b9
     print_test_results(wpe.get_continents, expected, actual)
 
 def test_get_continent_populations():
     """Test for population of Asia being larger than 4.5B"""
+<<<<<<< HEAD
+    expected = 'hello'
+    actual = wpe.get_continent_populations()
+    print_test_results(wpe.get_continent_populations, expected, actual)
+=======
     expected = ""
     actual = ""
     print_test_results(wpe.get_continent_populations, expected, actual)
 
+>>>>>>> 01c379293cb5525b84d4a87d16c2a662e07452b9
 
 # ------------------------------------------------------------------------------
 # main() and testing helper functions  - safely ignore the rest of this script
